@@ -1,0 +1,35 @@
+body{
+	font-family: $primary-font-family;
+	font-size: $primary-font-size;
+	background: $body-background;
+	font-smooth: always;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	letter-spacing:.5px;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-weight: 400;
+}
+
+html, button, input, select, textarea{
+	font-family: $primary-font-family;
+}
+
+a{
+	color: $primary-color;
+	text-decoration: underline;
+	font-weight: 600;
+	&:hover{
+		text-decoration: none;
+	}
+}
+
+%a-revert{
+	
+	color: $primary-color;
+
+	&:hover{
+		text-decoration: underline;
+	}
+}

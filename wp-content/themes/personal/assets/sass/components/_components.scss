@@ -1,0 +1,101 @@
+
+
+%site-navigation{
+
+	@include fl(r);
+	 padding-top: 15px;
+
+	a{
+	    margin-left: 20px;
+	}
+}
+
+%default-styling{
+
+	font-size: $post-content-size;
+	line-height: 1.5;
+
+	 h1, h2, h3, h4, h5, h6{
+
+	    font-weight: 600;
+	 }
+
+	h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote{
+
+	    margin-bottom: 30px;
+	}
+
+	strong{
+
+	    font-weight: 600;
+	}
+
+	blockquote{
+
+	    @include padding(null 40px);
+
+	    p{
+
+	        @include margin(0);
+
+	        &:before{
+
+	            content: "\201C";
+	        }
+	        &:after{
+	        	
+	            content: "\201d";
+	        }
+	    }
+	}
+}
+
+.btn{
+
+	&--secondary{
+
+		text-decoration: underline;
+		font-weight: 600;
+		background: none;
+		border: none;
+
+		@include screen(mobile-max) {
+			@include margin(10px null);
+			text-align: center;
+		}
+	}
+}
+
+
+.form{
+
+	@include clearfix;
+
+	*{
+		outline: none;
+	}
+
+	&__input{
+
+		@include padding(10px);
+		border: 1px solid $form-input-border-color;
+		font-size: $form-input-font-size;
+		width: 100%;
+
+		@include screen(mobile-l) {
+
+			width: 320px;
+		}
+
+		@include placeholder {
+
+			color: $form-input-font-color;
+			font-size: $form-input-font-size;
+		}
+	}
+
+	&__input--left{
+
+		@include fl(l);
+	}
+}

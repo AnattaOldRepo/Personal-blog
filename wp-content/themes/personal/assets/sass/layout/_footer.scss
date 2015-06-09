@@ -1,0 +1,55 @@
+.footer{
+
+
+	position: relative;
+	@include padding(40px null);
+
+	&:before{
+
+		content: '*****';
+		position: absolute;
+		top: 0;
+		text-align: center;
+		width: 100%;
+		font-weight: 800;
+	}
+
+	&__copy{
+
+		 @include fl(l);
+	}
+	&__navigation{
+		
+		display: none;
+
+        @include screen(mobile-l) {
+
+            display: block;
+        }
+        
+		 @include fl(r);
+		 @extend %site-navigation;
+		 padding: 0;
+	}
+
+}
+
+.footer__module{
+
+	@include margin(50px null);
+
+	&__title{
+
+		font-size: $footer-module-title-size;
+		font-weight: 700;
+	}
+
+	&__dec{
+
+		@include margin(10px null);
+
+		a{
+			@extend %a-revert;
+		}
+	}	
+}

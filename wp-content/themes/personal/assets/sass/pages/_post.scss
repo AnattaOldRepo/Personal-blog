@@ -1,0 +1,73 @@
+.page,
+.post{
+
+    @include margin(0 null 50px);
+
+    &__title{
+
+        @include margin(20px null);
+        font-size: $post-header-size;
+        font-weight: 700;
+        line-height: 1.3em;
+
+    }
+
+    &__content{
+
+        @extend %default-styling;
+
+    }
+
+    &__info{
+        font-size: $post-content-size - 5px;
+        top: -10px;
+        position: relative;
+        margin-bottom: 40px;
+    }
+
+    .wp-post-image{
+        max-width: 100%;
+        height: auto!important;
+    }
+
+    .alignnone,
+    .alignleft,
+    .alignright{
+        max-width: 100%;
+        height: auto!important;
+        
+    }
+
+}
+
+.page{
+     &__title{
+        font-size: $page-header-size;
+     }
+}
+
+
+// Category
+.category__block{
+    a{
+        @include margin(0 10px 20px null);
+        display: inline-block;
+    }
+}
+
+
+// Single post
+
+body.page,
+.single-post{
+    .page,
+    .post{
+        h1, h2, h3, h4, h5, h6{
+            text-align: center;
+        }
+
+        &__info{
+            text-align: center;
+        }
+    }
+}

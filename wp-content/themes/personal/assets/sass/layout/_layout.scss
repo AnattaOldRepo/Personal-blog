@@ -1,0 +1,9 @@
+.container{
+	@include clearfix;
+	@include padding(null 15px);
+	@include center-block;
+	max-width: $desktop;
+}
+
+@import "header";
+@import "footer";

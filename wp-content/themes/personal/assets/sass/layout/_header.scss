@@ -1,0 +1,82 @@
+.header{
+
+    @include padding(20px null);
+
+    margin-bottom: 50px;
+
+    @include screen(mobile-max) {
+
+        text-align: center;
+        margin-bottom: 0;
+    }
+
+    &__branding{
+
+        @include screen(mobile-l) {
+
+            @include fl(l);
+
+        }
+
+        a{
+            &:hover{ text-decoration:none;}
+        }
+    }
+
+    &__avatar{
+
+        @include screen(mobile-l) {
+            
+            @include fl(l);
+        }
+
+        img{
+
+            @include size(60px 60px);
+            @include border-top-radius(100%);
+            @include border-right-radius(100%);
+            @include border-bottom-radius(100%);
+            @include border-left-radius(100%);
+            -webkit-filter: blur(.5px);
+            filter: blur(.5px);
+        }
+       
+    }
+
+    &__logo,
+    &__description{
+
+        font-size: $logo-font-size;
+        font-weight: 400;
+    }
+
+    &__logo{
+
+        @include margin(9px);
+        font-size: $logo-font-size + 2px;
+
+        @include screen(mobile-l) {
+
+            @include fl(l);
+
+        }
+
+
+        a{
+            text-decoration: none;
+        }
+
+    }
+
+    &__navigation{
+
+        display: none;
+
+        @include screen(mobile-l) {
+
+            display: block;
+        }
+
+        @extend %site-navigation;
+    }
+}

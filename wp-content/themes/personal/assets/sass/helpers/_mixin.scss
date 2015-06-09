@@ -1,0 +1,93 @@
+@mixin bg-img-only($path, $type, $repeat: no-repeat, $p1: 0px, $p2: 0px) {
+    background-image: url("#{$imagedir}/#{$path}.#{$type}");
+    background-repeat: $repeat;
+    background-position: $p1 $p2;
+}
+
+@mixin fontsize($size: $baseFontSize, $lineHeight: $baseLineHeight) {
+  font-size: $size;
+  line-height: $lineHeight;
+}
+
+@mixin font-family($font-family) {
+    font-family: $font-family;
+}
+
+@mixin vertical-align {
+    top: 50%;
+    display:block;
+    position:relative;
+    @include transform(translateY(-50%));
+}
+
+@mixin center-block{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// new mixin for floats//
+
+@mixin fl($dir: float) {
+    @if $dir == "l" {
+        float: left;
+    }
+    @else if $dir == "r" {
+        float: right;
+    }
+    @else if $dir == "n" {
+        float: none;
+    }
+}
+
+// mixin for text-align //
+
+@mixin text-align($text-align: text-align) {
+    @if $text-align == "left" {
+        text-align: left;
+    }
+    @else if $text-align == "center" {
+        text-align: center;
+    }
+    @else if $text-align == "right" {
+        text-align: right;
+    }
+}
+
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow:$shadow;
+  -moz-box-shadow:$shadow;
+  box-shadow:$shadow;
+}
+    
+@mixin screen($media) {
+    @if $media == mobile {
+        @media only screen and (min-width: $mobile) {
+            @content;
+        }
+    }
+    @else if $media == mobile-l {
+        @media only screen and (min-width: $mobile-landscape) {
+            @content;
+        }
+    }
+    @else if $media == mobile-max {
+        @media only screen and (max-width: $mobile-landscape - 1px) {
+            @content;
+        }
+    }
+    @else if $media == tablet {
+        @media only screen and (min-width: $tablet-portrait) {
+            @content;
+        }
+    }
+    @else if $media == tablet-l {
+        @media only screen and (min-width: $tablet-landscape) {
+            @content;
+        }
+    }
+    @else if $media == desktop {
+        @media only screen and (min-width: $desktop) {
+            @content;
+        }
+    }
+}

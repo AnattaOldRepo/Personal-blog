@@ -1,0 +1,40 @@
+//Color
+$primary-color: #000000;
+
+
+//Backgrounds
+$body-background: #ffffff;
+
+//Typography
+$primary-font-family: 'Josefin Sans', sans-serif;
+$primary-font-size: 18px;
+
+//Header
+$logo-font-size: 20px;
+$logo-font-color: $primary-color;
+$border-color: #f4f4f4;
+
+
+
+//Post
+$post-header-size: 22px;
+$post-content-size: $primary-font-size;
+
+//Page
+$page-header-size: 30px;
+
+
+//Footer
+$footer-module-title-size: 20px;
+
+//Form
+$form-input-border-color: $primary-color;
+$form-input-font-size: 16px;
+$form-input-font-color: $primary-color;
+
+//Breakpoint
+
+$mobile: 320px;
+$mobile-landscape: 640px;
+$desktop: 800px;
+
