@@ -19,6 +19,7 @@
     }
 
     &__info{
+
         font-size: $post-content-size - 5px;
         top: -10px;
         position: relative;
@@ -26,6 +27,7 @@
     }
 
     .wp-post-image{
+
         max-width: 100%;
         height: auto!important;
     }
@@ -33,6 +35,7 @@
     .alignnone,
     .alignleft,
     .alignright{
+
         max-width: 100%;
         height: auto!important;
         
@@ -42,22 +45,54 @@
 
 .page{
      &__title{
+
         font-size: $page-header-size;
      }
 }
 
 
 // Category
-.category__block{
-    a{
-        @include margin(0 10px 20px null);
-        display: inline-block;
+.is_category_visible{
+
+    .category__block{
+
+        @include screen(mobile-l) {
+
+            @include fl(l);
+            width: 20%;
+        }
+
+
+        &--link{
+
+            @include padding(5px 10px);
+            margin-bottom: 10px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 400;
+
+            &.is_active,
+            &:hover{
+                border-radius: 5px;
+                background-color: $category-hover-color;
+                color: white;
+            }
+        }
+    }
+
+    .post{
+        
+        @include screen(mobile-l) {
+
+            @include fl(r);
+            width: 80%;
+        }
+
     }
 }
 
 
-// Single post
-
+body.error404,
 body.page,
 .single-post{
     .page,

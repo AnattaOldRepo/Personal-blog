@@ -9,18 +9,17 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<?php $categories = get_categories(array('exclude' => '1')); ?>
+	<div id="primary" class="<?php if ( count( array_filter( $categories ) ) > 0 ): ?> is_category_visible <?php  endif; ?>">
 		<main id="main" class="site-main" role="main">
-		<div class="container">
-			<div class="category__block">
-				<?php $categories = get_categories(array('exclude' => '1'));
-
-				foreach($categories as $category) { ?>
+			<div class="container">
+				<div class="category__block">
+					<?php foreach($categories as $category) { ?>
+						
+						<a class='category__block--link <?php if( get_the_category()[0]->term_id == $category->term_id): ?>is_active<?php endif; ?>' href='<?php echo esc_url( get_category_link( $category->term_id ) ); ?>' title='Category Name'><?php echo $category->name; ?></a>
 					
-					<a href="<?php echo esc_url( get_category_link( $category->term_id ) ); ?>" title="Category Name"><?php echo $category->name; ?></a>
-				
-				<?php } ?>
-			</div>
+					<?php } ?>
+				</div>
 			<?php if ( have_posts() ) : ?>
 
 				<?php /* Start the Loop */ ?>

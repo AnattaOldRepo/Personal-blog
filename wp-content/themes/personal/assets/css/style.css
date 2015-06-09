@@ -693,13 +693,38 @@ a {
 .page__title {
   font-size: 30px; }
 
-.category__block a {
-  margin-top: 0;
-  margin-right: 10px;
-  margin-bottom: 20px;
-  display: inline-block; }
+@media only screen and (min-width: 640px) {
+  .is_category_visible .category__block {
+    float: left;
+    width: 20%; } }
+.is_category_visible .category__block--link {
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 400; }
+  .is_category_visible .category__block--link.is_active, .is_category_visible .category__block--link:hover {
+    border-radius: 5px;
+    background-color: #fb3336;
+    color: white; }
+@media only screen and (min-width: 640px) {
+  .is_category_visible .post {
+    float: right;
+    width: 80%; } }
 
-body.page .page h1, body.page .page h2, body.page .page h3, body.page .page h4, body.page .page h5, body.page .page h6,
+body.error404 .page h1, body.error404 .page h2, body.error404 .page h3, body.error404 .page h4, body.error404 .page h5, body.error404 .page h6,
+body.error404 .post h1,
+body.error404 .post h2,
+body.error404 .post h3,
+body.error404 .post h4,
+body.error404 .post h5,
+body.error404 .post h6,
+body.page .page h1,
+body.page .page h2,
+body.page .page h3,
+body.page .page h4,
+body.page .page h5,
+body.page .page h6,
 body.page .post h1,
 body.page .post h2,
 body.page .post h3,
@@ -719,6 +744,8 @@ body.page .post h6,
 .single-post .post h5,
 .single-post .post h6 {
   text-align: center; }
+body.error404 .page__info,
+body.error404 .post__info,
 body.page .page__info,
 body.page .post__info,
 .single-post .page__info,
