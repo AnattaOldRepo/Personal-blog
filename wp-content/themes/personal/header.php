@@ -14,9 +14,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
-<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
-
+<?php wp_enqueue_script("jquery"); ?>
 <?php wp_head(); ?>
 </head>
 
@@ -29,9 +27,9 @@
 				<div class="header__avatar"><?php echo get_avatar( get_current_user_id(), 100 ); ?></div>
 				<h1 class="header__logo">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<?php $current_user = wp_get_current_user(); echo $current_user->display_name; ?>
+						<?php bloginfo('name'); ?>
 					</a>
-					<p class="header__description"><?php $current_user = wp_get_current_user(); echo $current_user->description; ?></p>
+					<p class="header__description"><?php bloginfo('description'); ?></p>
 				</h1>
 			</div><!-- .site-branding -->
 

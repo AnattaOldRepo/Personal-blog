@@ -115,7 +115,7 @@ function personal_scripts() {
 
 	wp_enqueue_style( 'personal-style', get_template_directory_uri().'/assets/css/style.css' );
 
-	wp_enqueue_script( 'personal-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'personal-javascript', get_template_directory_uri() . '/assets/js/global.js', array('jquery'), '20120206', true );
 
 	wp_enqueue_script( 'personal-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
