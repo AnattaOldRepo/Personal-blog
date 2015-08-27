@@ -10,13 +10,14 @@ $primary-font-family: 'HelveticaNeue' sans-serif; //'Josefin Sans', sans-serif;
 $primary-font-size: 18px;
 
 //Header
-$logo-font-size: 20px;
+$logo-font-size: 14px;
 $logo-font-color: $primary-color;
 $border-color: #f4f4f4;
+$navigation-font-size: $primary-font-size - 4px;
 
 
 //Post
-$post-header-size: 22px;
+$post-header-size: 21px;
 $post-content-size: $primary-font-size;
 
 //Page

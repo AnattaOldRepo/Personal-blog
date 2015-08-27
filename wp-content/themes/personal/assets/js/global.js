@@ -9,7 +9,9 @@ Author: @Monkviper
 (function($) {
     $(document).ready(function($) {
 
-    	// Put your functions here
+    	// Remove custom border from image when its is wrapped in a tag
+
+    	$('.alignnone').parent().addClass('no-border');
 
     });
 })(jQuery);

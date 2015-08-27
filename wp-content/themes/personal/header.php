@@ -25,11 +25,13 @@
 		<div class="container">
 			<div class="header__branding">
 				<div class="header__avatar">
-				<?php 
-					if ( $blogname = get_option( 'blogname' ) ) { 
-						echo get_shortname( $blogname );
-					} 
-				?>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<?php 
+						if ( $blogname = get_option( 'blogname' ) ) { 
+							echo get_shortname( $blogname );
+						} 
+					?>
+				</a>
 				</div>
 				<h1 class="header__logo">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">

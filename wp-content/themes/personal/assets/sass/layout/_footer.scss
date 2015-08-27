@@ -17,6 +17,7 @@
 	&__copy{
 
 		 @include fl(l);
+		 font-size: $navigation-font-size;
 	}
 	&__navigation{
 		
@@ -36,20 +37,31 @@
 
 .footer__module{
 
-	@include margin(50px null);
+	@include margin(50px null 60px);
 
 	&__title{
 
 		font-size: $footer-module-title-size;
-		font-weight: 700;
+		font-family: "HelveticaNeue Bold"
 	}
 
 	&__dec{
 
-		@include margin(10px null);
+		@include margin(4px null 10px);
+		line-height: 28px;
 
 		a{
-			@extend %a-revert;
+			@extend %custom-link;
 		}
 	}	
+
+	.btn{
+		&--secondary{
+
+			margin:20px 0;
+			@include screen(mobile-l) {
+				margin-left: 20px;
+			}
+		}
+	}
 }

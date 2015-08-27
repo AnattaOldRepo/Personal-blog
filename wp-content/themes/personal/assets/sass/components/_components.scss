@@ -1,12 +1,40 @@
 
+%custom-link{
+	padding-bottom:2px;
+    text-decoration: none;
+    @include position(relative);
+	&:after{
+    	content: '';
+    	@include position(absolute, null null 0 0);
+    	@include size(100% 1px);
+    	background-color: $primary-color;
+    }
+
+    &:hover{
+    	&:after{
+    		background-color: transparent;
+    	}
+    }
+
+    &.active{
+    	color: lighten($primary-color, 50%);
+    	&:after{
+    		background-color: lighten($primary-color, 50%);
+    	}
+    }
+}
+
+
 
 %site-navigation{
 
 	@include fl(r);
-	 padding-top: 15px;
+	 padding-top: 3px;
 
 	a{
-	    margin-left: 20px;
+	    margin-left: 32px;
+	    font-size: $navigation-font-size;
+	    @extend %custom-link;
 	}
 }
 
@@ -17,22 +45,43 @@
 
 	 h1, h2, h3, h4, h5, h6{
 
-	    font-weight: 600;
+	    font-weight: normal;
+	    font-family: "HelveticaNeue Bold";
 	 }
+
+
+	$headers: h1, h2, h3, h4, h5, h6;
+
+	@for $i from 1 through length($headers) {
+		h#{$i} {
+			font-size: $post-header-size + 2 - $i;
+		}
+	}
 
 	h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote{
 
 	    margin-bottom: 30px;
 	}
 
+	b,
 	strong{
 
-	    font-weight: 600;
+	    font-weight: normal;
+	    font-family: "HelveticaNeue Bold";
+	}
+
+	i,em{
+		font-style: italic;
 	}
 
 	blockquote{
 
-	    @include padding(null 40px);
+		@include padding(null 10px);
+		margin:0;
+
+		@include screen(mobile-l) {
+			@include padding(null 40px);
+		}
 
 	    p{
 
@@ -54,10 +103,12 @@
 
 	&--secondary{
 
-		text-decoration: underline;
-		font-weight: 600;
-		background: none;
+		padding:0;
 		border: none;
+		background: none;
+		@extend %custom-link;
+		text-decoration: none;
+		font-family: "HelveticaNeue Bold";
 
 		@include screen(mobile-max) {
 			@include margin(10px null);
@@ -97,5 +148,11 @@
 	&__input--left{
 
 		@include fl(l);
+	}
+}
+
+.no-border{
+	&:after{
+		display: none;
 	}
 }

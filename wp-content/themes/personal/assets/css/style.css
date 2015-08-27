@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*! normalize.css v1.1.3 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -460,13 +459,16 @@ table {
   border-spacing: 0; }
 
 @font-face {
-  font-family: 'HelveticaNeue';
-  src: url("../fonts/HelveticaNeue.eot");
-  src: local("☺"), url("../fonts/HelveticaNeue.woff") format("woff"), url("../fonts/HelveticaNeue.ttf") format("truetype"), url("../fonts/HelveticaNeue.svg") format("svg");
-  font-weight: normal;
-  font-style: normal; }
+  font-family: HelveticaNeue;
+  src: url("../fonts/helveticaneue.eot?") format("eot"), url("../fonts/helveticaneue.ttf") format("woff"), url("../fonts/helveticaneue.woff") format("woff"), url("../fonts/helveticaneue.ttf") format("truetype"); }
+@font-face {
+  font-family: HelveticaNeue Bold;
+  src: url("../fonts/helveticaneuebold.eot?") format("eot"), url("../fonts/helveticaneuebold.ttf") format("woff"), url("../fonts/helveticaneuebold.woff") format("woff"), url("../fonts/helveticaneuebold.ttf") format("truetype"); }
+@font-face {
+  font-family: HelveticaNeue Light;
+  src: url("../fonts/helveticaneuelight.eot?") format("eot"), url("../fonts/helveticaneuelight.ttf") format("woff"), url("../fonts/helveticaneuelight.woff") format("woff"), url("../fonts/helveticaneuelight.ttf") format("truetype"); }
 body {
-  font-family: "HelveticaNeue";
+  font-family: "HelveticaNeue" sans-serif;
   font-size: 18px;
   background: #ffffff;
   font-smooth: always;
@@ -478,25 +480,44 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400; }
 
 html, button, input, select, textarea {
-  font-family: "HelveticaNeue"; }
+  font-family: "HelveticaNeue" sans-serif; }
 
 a {
   color: #000000;
-  text-decoration: underline;
-  font-weight: 600; }
+  text-decoration: underline; }
   a:hover {
     text-decoration: none; }
 
-.footer__module__dec a {
-  color: #000000; }
-  .footer__module__dec a:hover {
-    text-decoration: underline; }
+.header__navigation a, .footer__navigation a, .btn--secondary, .footer__module__dec a, .page__content a,
+.post__content a {
+  padding-bottom: 2px;
+  text-decoration: none;
+  position: relative; }
+  .header__navigation a:after, .footer__navigation a:after, .btn--secondary:after, .footer__module__dec a:after, .page__content a:after,
+  .post__content a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: #000000; }
+  .header__navigation a:hover:after, .footer__navigation a:hover:after, .btn--secondary:hover:after, .footer__module__dec a:hover:after, .page__content a:hover:after,
+  .post__content a:hover:after {
+    background-color: transparent; }
+  .header__navigation a.active, .footer__navigation a.active, .active.btn--secondary, .footer__module__dec a.active, .page__content a.active,
+  .post__content a.active {
+    color: gray; }
+    .header__navigation a.active:after, .footer__navigation a.active:after, .active.btn--secondary:after, .footer__module__dec a.active:after, .page__content a.active:after,
+    .post__content a.active:after {
+      background-color: gray; }
 
 .header__navigation, .footer__navigation {
   float: right;
-  padding-top: 15px; }
+  padding-top: 3px; }
   .header__navigation a, .footer__navigation a {
-    margin-left: 20px; }
+    margin-left: 32px;
+    font-size: 14px; }
 
 .page__content,
 .post__content {
@@ -509,7 +530,26 @@ a {
   .post__content h4, .page__content h5,
   .post__content h5, .page__content h6,
   .post__content h6 {
-    font-weight: 600; }
+    font-weight: normal;
+    font-family: "HelveticaNeue Bold"; }
+  .page__content h1,
+  .post__content h1 {
+    font-size: 22px; }
+  .page__content h2,
+  .post__content h2 {
+    font-size: 21px; }
+  .page__content h3,
+  .post__content h3 {
+    font-size: 20px; }
+  .page__content h4,
+  .post__content h4 {
+    font-size: 19px; }
+  .page__content h5,
+  .post__content h5 {
+    font-size: 18px; }
+  .page__content h6,
+  .post__content h6 {
+    font-size: 17px; }
   .page__content h1,
   .post__content h1, .page__content h2,
   .post__content h2, .page__content h3,
@@ -522,13 +562,26 @@ a {
   .post__content ol, .page__content blockquote,
   .post__content blockquote {
     margin-bottom: 30px; }
+  .page__content b,
+  .post__content b,
   .page__content strong,
   .post__content strong {
-    font-weight: 600; }
+    font-weight: normal;
+    font-family: "HelveticaNeue Bold"; }
+  .page__content i,
+  .post__content i, .page__content em,
+  .post__content em {
+    font-style: italic; }
   .page__content blockquote,
   .post__content blockquote {
-    padding-right: 40px;
-    padding-left: 40px; }
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: 0; }
+    @media only screen and (min-width: 640px) {
+      .page__content blockquote,
+      .post__content blockquote {
+        padding-right: 40px;
+        padding-left: 40px; } }
     .page__content blockquote p,
     .post__content blockquote p {
       margin: 0; }
@@ -540,10 +593,11 @@ a {
         content: "\201d"; }
 
 .btn--secondary {
-  text-decoration: underline;
-  font-weight: 600;
+  padding: 0;
+  border: none;
   background: none;
-  border: none; }
+  text-decoration: none;
+  font-family: "HelveticaNeue Bold"; }
   @media only screen and (max-width: 639px) {
     .btn--secondary {
       margin-top: 10px;
@@ -579,6 +633,9 @@ a {
 .form__input--left {
   float: left; }
 
+.no-border:after {
+  display: none; }
+
 .container {
   padding-right: 15px;
   padding-left: 15px;
@@ -593,7 +650,7 @@ a {
 .header {
   padding-top: 20px;
   padding-bottom: 20px;
-  margin-bottom: 50px; }
+  margin-bottom: 72px; }
   @media only screen and (max-width: 639px) {
     .header {
       text-align: center;
@@ -603,12 +660,10 @@ a {
       float: left; } }
   .header__branding a:hover {
     text-decoration: none; }
-  @media only screen and (min-width: 640px) {
-    .header__avatar {
-      float: left; } }
-  .header__avatar img {
-    height: 60px;
-    width: 60px;
+  .header__avatar {
+    font-size: 40px;
+    font-family: "HelveticaNeue Bold";
+    letter-spacing: -5px;
     border-top-left-radius: 100%;
     border-top-right-radius: 100%;
     border-bottom-right-radius: 100%;
@@ -616,20 +671,23 @@ a {
     border-bottom-left-radius: 100%;
     border-bottom-right-radius: 100%;
     border-bottom-left-radius: 100%;
-    border-top-left-radius: 100%;
-    -webkit-filter: blur(0.5px);
-    filter: blur(0.5px); }
+    border-top-left-radius: 100%; }
+    .header__avatar a {
+      text-decoration: none; }
+    @media only screen and (min-width: 640px) {
+      .header__avatar {
+        float: left; } }
   .header__logo, .header__description {
-    font-size: 20px;
-    font-weight: 400; }
+    font-size: 14px; }
   .header__logo {
-    margin: 9px;
-    font-size: 22px; }
+    font-size: 14px;
+    margin: 8px 20px; }
+    .header__logo a {
+      text-decoration: none;
+      text-transform: capitalize; }
     @media only screen and (min-width: 640px) {
       .header__logo {
         float: left; } }
-    .header__logo a {
-      text-decoration: none; }
   .header__navigation {
     display: none; }
     @media only screen and (min-width: 640px) {
@@ -648,7 +706,8 @@ a {
     width: 100%;
     font-weight: 800; }
   .footer__copy {
-    float: left; }
+    float: left;
+    font-size: 14px; }
   .footer__navigation {
     display: none;
     float: right;
@@ -659,31 +718,41 @@ a {
 
 .footer__module {
   margin-top: 50px;
-  margin-bottom: 50px; }
+  margin-bottom: 60px; }
   .footer__module__title {
     font-size: 20px;
-    font-weight: 700; }
+    font-family: "HelveticaNeue Bold"; }
   .footer__module__dec {
-    margin-top: 10px;
-    margin-bottom: 10px; }
+    margin-top: 4px;
+    margin-bottom: 10px;
+    line-height: 28px; }
+  .footer__module .btn--secondary {
+    margin: 20px 0; }
+    @media only screen and (min-width: 640px) {
+      .footer__module .btn--secondary {
+        margin-left: 20px; } }
 
 .page,
 .post {
   margin-top: 0;
-  margin-bottom: 50px; }
+  margin-bottom: 70px; }
   .page__title,
   .post__title {
     margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 22px;
-    font-weight: 700;
+    margin-bottom: 7px;
+    font-size: 21px;
+    font-family: "HelveticaNeue Bold";
     line-height: 1.3em; }
+    .page__title a,
+    .post__title a {
+      text-decoration: none; }
   .page__info,
   .post__info {
     font-size: 13px;
-    top: -10px;
     position: relative;
-    margin-bottom: 40px; }
+    margin-bottom: 40px;
+    font-style: italic;
+    text-decoration: none; }
   .page .wp-post-image,
   .post .wp-post-image {
     max-width: 100%;
@@ -698,8 +767,17 @@ a {
     height: auto !important; }
 
 .page__title {
-  font-size: 30px; }
+  font-size: 30px;
+  margin-bottom: 40px; }
 
+.post__title {
+  margin-bottom: 15px; }
+
+.is_category_visible .category__block div {
+  display: inline; }
+  @media only screen and (min-width: 640px) {
+    .is_category_visible .category__block div {
+      display: block; } }
 @media only screen and (min-width: 640px) {
   .is_category_visible .category__block {
     float: left;
@@ -726,18 +804,6 @@ body.error404 .post h3,
 body.error404 .post h4,
 body.error404 .post h5,
 body.error404 .post h6,
-body.page .page h1,
-body.page .page h2,
-body.page .page h3,
-body.page .page h4,
-body.page .page h5,
-body.page .page h6,
-body.page .post h1,
-body.page .post h2,
-body.page .post h3,
-body.page .post h4,
-body.page .post h5,
-body.page .post h6,
 .single-post .page h1,
 .single-post .page h2,
 .single-post .page h3,
@@ -753,10 +819,11 @@ body.page .post h6,
   text-align: center; }
 body.error404 .page__info,
 body.error404 .post__info,
-body.page .page__info,
-body.page .post__info,
 .single-post .page__info,
 .single-post .post__info {
   text-align: center; }
+
+body.page .page__title {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */

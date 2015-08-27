@@ -1,14 +1,18 @@
 .page,
 .post{
 
-    @include margin(0 null 50px);
+    @include margin(0 null 70px);
 
     &__title{
 
-        @include margin(20px null);
+        @include margin(20px null 7px);
         font-size: $post-header-size;
-        font-weight: 700;
+        font-family: "HelveticaNeue Bold";
         line-height: 1.3em;
+
+        a{
+            text-decoration: none;
+        }
 
     }
 
@@ -16,14 +20,19 @@
 
         @extend %default-styling;
 
+        a{
+            @extend %custom-link;
+        }
+
     }
 
     &__info{
 
         font-size: $post-content-size - 5px;
-        top: -10px;
         position: relative;
         margin-bottom: 40px;
+        font-style: italic;
+        text-decoration: none;
     }
 
     .wp-post-image{
@@ -47,6 +56,13 @@
      &__title{
 
         font-size: $page-header-size;
+        margin-bottom: 40px;
+     }
+}
+
+.post{
+     &__title{
+        margin-bottom: 15px;
      }
 }
 
@@ -55,6 +71,14 @@
 .is_category_visible{
 
     .category__block{
+
+        div{
+            display: inline;
+
+            @include screen(mobile-l) {
+                display: block;
+            }
+        }
 
         @include screen(mobile-l) {
 
@@ -93,7 +117,6 @@
 
 
 body.error404,
-body.page,
 .single-post{
     .page,
     .post{
@@ -103,6 +126,14 @@ body.page,
 
         &__info{
             text-align: center;
+        }
+    }
+}
+
+body.page{
+    .page{
+        &__title{
+            display: none;
         }
     }
 }

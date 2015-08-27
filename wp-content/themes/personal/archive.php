@@ -16,7 +16,7 @@ get_header(); ?>
 				<div class="category__block">
 					<?php foreach($categories as $category) { ?>
 						
-						<a class='category__block--link <?php if( get_the_category()[0]->term_id == $category->term_id): ?>is_active<?php endif; ?>' href='<?php echo esc_url( get_category_link( $category->term_id ) ); ?>' title='Category Name'><?php echo $category->name; ?></a>
+						<div><a class='category__block--link <?php if( get_the_category()[0]->term_id == $category->term_id): ?>is_active<?php endif; ?>' href='<?php echo esc_url( get_category_link( $category->term_id ) ); ?>' title='Category Name'><?php echo $category->name; ?></a></div>
 					
 					<?php } ?>
 				</div>
