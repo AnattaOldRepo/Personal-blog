@@ -1,12 +1,21 @@
+@mixin font-face-src($name, $file) {
+    font-family: #{$name};
+    src: url("../fonts/#{$file}.eot?") format("eot"), url("../fonts/#{$file}.ttf") format("woff"), url("../fonts/#{$file}.woff") format("woff"), url("../fonts/#{$file}.ttf") format("truetype");
+}
+
 @font-face {
-	font-family: 'HelveticaNeue';
-	src: url('../fonts/HelveticaNeue.eot');
-	src: local('☺'), url('../fonts/HelveticaNeue.woff') format('woff'), url('../fonts/HelveticaNeue.ttf') format('truetype'), url('../fonts/HelveticaNeue.svg') format('svg');
-	font-weight: normal;
-	font-style: normal;
+    @include font-face-src("HelveticaNeue", "helveticaneue");
 }
 
 
+@font-face {
+    @include font-face-src("HelveticaNeue Bold", "helveticaneuebold");
+}
+
+
+@font-face {
+    @include font-face-src("HelveticaNeue Light", "helveticaneuelight");
+}
 
 
 body{
@@ -30,7 +39,6 @@ html, button, input, select, textarea{
 a{
 	color: $primary-color;
 	text-decoration: underline;
-	font-weight: 600;
 	&:hover{
 		text-decoration: none;
 	}
