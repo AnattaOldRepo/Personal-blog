@@ -126,6 +126,31 @@ function personal_scripts() {
 add_action( 'wp_enqueue_scripts', 'personal_scripts' );
 
 /**
+ * Get first letter of first and last name
+ */
+function get_shortname( $name ){
+
+   // Bailout.
+   if( ! $name ){
+       return false;
+   }
+
+   // Explode name string
+   $name = explode( ' ', $name );
+
+   // Calculate name array count
+   $word_count = count( $name );
+   
+   if( 1 < $word_count ){
+       // return first letter from first name & last name
+       return ucwords( $name[0][0] ). ' ' . ucwords( $name[ $word_count - 1 ][0] );
+   }else{
+       // return first letter from first name
+       return ucwords( $name[0][0] );
+   }
+}
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';

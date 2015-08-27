@@ -24,7 +24,13 @@
 	<header id="masthead" class="header" role="banner">
 		<div class="container">
 			<div class="header__branding">
-				<div class="header__avatar"><?php echo get_avatar( get_current_user_id(), 100 ); ?></div>
+				<div class="header__avatar">
+				<?php 
+					if ( $blogname = get_option( 'blogname' ) ) { 
+						echo get_shortname( $blogname );
+					} 
+				?>
+				</div>
 				<h1 class="header__logo">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 						<?php bloginfo('name'); ?>
