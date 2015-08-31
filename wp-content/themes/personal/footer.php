@@ -44,7 +44,11 @@
 				<?php endif; ?>
 			</div>
 			<div class="footer__info">
-				<p class="footer__copy">Copyright <?php $user_info = get_userdata(1); echo $user_info->nickname; ?> <?php echo date('Y'); ?></p>
+				<?php if ( $copyright_msg = get_theme_mod( 'copyright_msg' ) ) : ?>
+					<p class="footer__copy">
+						<?php echo $copyright_msg; ?>
+					</p>
+				<?php endif; ?>
 				<nav id="site-footer-navigation" class="footer__navigation" role="navigation">
 					<?php
 						$menuParameters = array(

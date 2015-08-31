@@ -130,6 +130,36 @@ function personal_customize_register( $wp_customize ) {
 			'settings'   => 'facebook_profile_link',
 		)
 	);
+
+	// Copyright Setting Section.
+	$wp_customize->add_section(
+		'personal_copyright_option' ,
+		array(
+			'title'         => __( 'Copyright', 'personal' ),
+			'description'   => __( 'You can manage you theme copyright message setting in this section', 'personal' ),
+			'priority'      => 3,
+			'panel'         => 'personal_theme_options',
+		)
+	);
+
+	// twitter setting.
+	$wp_customize->add_setting(
+		'copyright_msg',
+		array(
+			'default'        => '',
+			'capability'     => 'edit_theme_options',
+		)
+	);
+
+	// twitter control.
+	$wp_customize->add_control(
+		'copyright_msg',
+		array(
+			'label'      => __( 'Copyright Message', 'personal' ),
+			'section'    => 'personal_copyright_option',
+			'settings'   => 'copyright_msg',
+		)
+	);
 }
 add_action( 'customize_register', 'personal_customize_register' );
 
