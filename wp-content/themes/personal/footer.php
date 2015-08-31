@@ -13,12 +13,16 @@
 
 	<footer id="colophon" class="footer" role="contentinfo">
 		<div class="container">
-			<div class="footer__module">
-				<?php if ( $feedback_msg = get_theme_mod( 'feedback_msg' )  ) : ?>
+
+			<?php if ( $feedback_msg = get_theme_mod( 'feedback_msg' )  ) : ?>
+				<div class="footer__module">
 					<h2 class="footer__module__title"><?php _e( 'Feedback', 'personal' ); ?></h2>
-					<p class="footer__module__dec"><?php echo $feedback_msg; ?></p>
-				<?php endif; ?>
-			</div>
+					<p class="footer__module__dec">
+						<?php echo $feedback_msg; ?>
+					</p>
+				</div>
+			<?php endif; ?>
+
 
 			<?php if ( $mailchimp_form = get_theme_mod( 'mailchimp_form_html' ) ) : ?>
 				<div class="footer__module">
@@ -34,8 +38,9 @@
 					</div>
 				</div>
 			<?php endif; ?>
-			<div class="footer__module">
-				<?php if ( $github_profile_link = get_theme_mod( 'github_profile_link' ) ) : ?>
+
+			<?php if ( $github_profile_link = get_theme_mod( 'github_profile_link' ) ) : ?>
+				<div class="footer__module">
 					<h2 class="footer__module__title"><?php _e( 'Follow', 'personal' ); ?></h2>
 					<p class="footer__module__dec">
 
@@ -48,8 +53,10 @@
 						<?php if ( $fb_profile_link = get_theme_mod( 'facebook_profile_link' ) ) : ?>
 							&nbsp;/&nbsp;<a href="<?php echo esc_url( $fb_profile_link ); ?>"><?php _e( 'Facebook', 'personal' ); ?></a>
 						<?php endif; ?>
-				<?php endif; ?>
-			</div>
+					</p>
+				</div>
+			<?php endif; ?>
+
 			<div class="footer__info">
 				<?php if ( $copyright_msg = get_theme_mod( 'copyright_msg' ) ) : ?>
 					<p class="footer__copy">
