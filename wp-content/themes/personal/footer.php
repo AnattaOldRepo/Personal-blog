@@ -14,10 +14,9 @@
 	<footer id="colophon" class="footer" role="contentinfo">
 		<div class="container">
 			<div class="footer__module">
-				<?php $feedback_options = get_theme_mod( 'personal_feedback_option' ); ?>
-				<?php if ( is_array( $feedback_options ) && array_key_exists( 'feedback_msg', $feedback_options ) && $feedback_options['feedback_msg'] ) : ?>
+				<?php if ( $feedback_msg = get_theme_mod( 'feedback_msg' )  ) : ?>
 					<h2 class="footer__module__title"><?php _e( 'Feedback', 'personal' ); ?></h2>
-					<p class="footer__module__dec"><?php echo $feedback_options['feedback_msg']; ?></p>
+					<p class="footer__module__dec"><?php echo $feedback_msg; ?></p>
 				<?php endif; ?>
 			</div>
 			<div class="footer__module">
@@ -29,8 +28,14 @@
 				</div>
 			</div>
 			<div class="footer__module">
-				<h2 class="footer__module__title">Follow</h2>
-				<p class="footer__module__dec"><a href="#">Twitter</a> / <a href="#">Github</a> / <a href="#">Facebook</a></p>
+				<?php $social_media_option = get_theme_mod( 'personal_social_media_option' );?>
+				<?php if ( is_array( $social_media_option ) && ! empty( $social_media_option ) ) : ?>
+					<h2 class="footer__module__title"><?php _e( 'Follow', 'personal' ); ?></h2>
+					<p class="footer__module__dec">
+						<a href="#">Twitter</a>
+						/ <a href="#">Github</a>
+						/ <a href="#">Facebook</a></p>
+				<?php endif; ?>
 			</div>
 			<div class="footer__info">
 				<p class="footer__copy">Copyright <?php $user_info = get_userdata(1); echo $user_info->nickname; ?> <?php echo date('Y'); ?></p>

@@ -45,7 +45,7 @@ function personal_customize_register( $wp_customize ) {
 
 	// Feedback message setting.
 	$wp_customize->add_setting(
-		'personal_feedback_option[feedback_msg]',
+		'feedback_msg',
 		array(
 			'default'        => '',
 			'capability'     => 'edit_theme_options',
@@ -58,8 +58,76 @@ function personal_customize_register( $wp_customize ) {
 		array(
 			'label'      => __( 'Feedback Message', 'personal' ),
 			'section'    => 'personal_feedback_option',
-			'settings'   => 'personal_feedback_option[feedback_msg]',
+			'settings'   => 'feedback_msg',
 			'type'       => 'textarea',
+		)
+	);
+
+	// Social Media Setting Section.
+	$wp_customize->add_section(
+		'personal_social_media_option' ,
+		array(
+			'title'         => __( 'Social', 'personal' ),
+			'description'   => __( 'You can manage you theme socila media setting in this section', 'personal' ),
+			'priority'      => 3,
+			'panel'         => 'personal_theme_options',
+		)
+	);
+
+	// twitter setting.
+	$wp_customize->add_setting(
+		'personal_social_media_option[twitter]',
+		array(
+			'default'        => '',
+			'capability'     => 'edit_theme_options',
+		)
+	);
+
+	// twitter control.
+	$wp_customize->add_control(
+		'twitter',
+		array(
+			'label'      => __( 'Twitter Profile Link', 'personal' ),
+			'section'    => 'personal_social_media_option',
+			'settings'   => 'personal_social_media_option[twitter]',
+		)
+	);
+
+	// github setting.
+	$wp_customize->add_setting(
+		'personal_social_media_option[github]',
+		array(
+			'default'        => '',
+			'capability'     => 'edit_theme_options',
+		)
+	);
+
+	// github control.
+	$wp_customize->add_control(
+		'github',
+		array(
+			'label'      => __( 'Github Profile Link', 'personal' ),
+			'section'    => 'personal_social_media_option',
+			'settings'   => 'personal_social_media_option[github]',
+		)
+	);
+
+	// facebook setting.
+	$wp_customize->add_setting(
+		'personal_social_media_option[facebook]',
+		array(
+			'default'        => '',
+			'capability'     => 'edit_theme_options',
+		)
+	);
+
+	// facebook control.
+	$wp_customize->add_control(
+		'facebook',
+		array(
+			'label'      => __( 'Facebook Profile Link', 'personal' ),
+			'section'    => 'personal_social_media_option',
+			'settings'   => 'personal_social_media_option[facebook]',
 		)
 	);
 }
