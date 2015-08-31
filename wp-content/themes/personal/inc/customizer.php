@@ -76,7 +76,7 @@ function personal_customize_register( $wp_customize ) {
 
 	// twitter setting.
 	$wp_customize->add_setting(
-		'personal_social_media_option[twitter]',
+		'twitter_profile_link',
 		array(
 			'default'        => '',
 			'capability'     => 'edit_theme_options',
@@ -85,17 +85,17 @@ function personal_customize_register( $wp_customize ) {
 
 	// twitter control.
 	$wp_customize->add_control(
-		'twitter',
+		'twitter_profile_link',
 		array(
 			'label'      => __( 'Twitter Profile Link', 'personal' ),
 			'section'    => 'personal_social_media_option',
-			'settings'   => 'personal_social_media_option[twitter]',
+			'settings'   => 'twitter_profile_link',
 		)
 	);
 
 	// github setting.
 	$wp_customize->add_setting(
-		'personal_social_media_option[github]',
+		'github_profile_link',
 		array(
 			'default'        => '',
 			'capability'     => 'edit_theme_options',
@@ -104,17 +104,17 @@ function personal_customize_register( $wp_customize ) {
 
 	// github control.
 	$wp_customize->add_control(
-		'github',
+		'github_profile_link',
 		array(
 			'label'      => __( 'Github Profile Link', 'personal' ),
 			'section'    => 'personal_social_media_option',
-			'settings'   => 'personal_social_media_option[github]',
+			'settings'   => 'github_profile_link',
 		)
 	);
 
 	// facebook setting.
 	$wp_customize->add_setting(
-		'personal_social_media_option[facebook]',
+		'facebook_profile_link',
 		array(
 			'default'        => '',
 			'capability'     => 'edit_theme_options',
@@ -123,11 +123,11 @@ function personal_customize_register( $wp_customize ) {
 
 	// facebook control.
 	$wp_customize->add_control(
-		'facebook',
+		'facebook_profile_link',
 		array(
 			'label'      => __( 'Facebook Profile Link', 'personal' ),
 			'section'    => 'personal_social_media_option',
-			'settings'   => 'personal_social_media_option[facebook]',
+			'settings'   => 'facebook_profile_link',
 		)
 	);
 }

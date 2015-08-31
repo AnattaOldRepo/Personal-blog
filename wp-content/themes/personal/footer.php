@@ -28,13 +28,19 @@
 				</div>
 			</div>
 			<div class="footer__module">
-				<?php $social_media_option = get_theme_mod( 'personal_social_media_option' );?>
-				<?php if ( is_array( $social_media_option ) && ! empty( $social_media_option ) ) : ?>
+				<?php if ( $github_profile_link = get_theme_mod( 'github_profile_link' ) ) : ?>
 					<h2 class="footer__module__title"><?php _e( 'Follow', 'personal' ); ?></h2>
 					<p class="footer__module__dec">
-						<a href="#">Twitter</a>
-						/ <a href="#">Github</a>
-						/ <a href="#">Facebook</a></p>
+
+						<?php if ( $twitter_profile_link = get_theme_mod( 'twitter_profile_link' ) ) : ?>
+							<a href="<?php echo esc_url( $twitter_profile_link ); ?>"><?php _e( 'Twitter', 'personal' ); ?></a>&nbsp;/&nbsp;
+						<?php endif; ?>
+
+						<a href="<?php echo esc_url( $github_profile_link ); ?>"><?php _e( 'Github', 'personal' ); ?></a>
+
+						<?php if ( $fb_profile_link = get_theme_mod( 'facebook_profile_link' ) ) : ?>
+							&nbsp;/&nbsp;<a href="<?php echo esc_url( $fb_profile_link ); ?>"><?php _e( 'Facebook', 'personal' ); ?></a>
+						<?php endif; ?>
 				<?php endif; ?>
 			</div>
 			<div class="footer__info">
