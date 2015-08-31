@@ -71,13 +71,16 @@
 
     &__navigation{
 
-        display: none;
-
-        @include screen(mobile-l) {
-
-            display: block;
-        }
-
         @extend %site-navigation;
+
+        @include screen(mobile-max) {
+
+            float: none;
+            padding: 0;
+
+            a{
+                margin:0;
+            }
+        }
     }
 }
