@@ -34,10 +34,11 @@
 				<nav id="site-footer-navigation" class="footer__navigation" role="navigation">
 					<?php
 						$menuParameters = array(
-						  'container'       => false,
-						  'echo'            => false,
-						  'items_wrap'      => '%3$s',
-						  'depth'           => 0,
+							'theme_location' => 'primary',
+							'container'       => false,
+							'echo'            => false,
+							'items_wrap'      => '%3$s',
+							'depth'           => 1,
 						);
 						echo strip_tags(wp_nav_menu( $menuParameters ), '<a>' );
 					 ?>
