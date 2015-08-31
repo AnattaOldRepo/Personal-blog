@@ -11,9 +11,14 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function personal_customize_register( $wp_customize ) {
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	//$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
+	//$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+	//$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+
+	// Remove Colors, Background image, and Static front page option from theme customizer.
+	$wp_customize->remove_section( 'colors' );
+	$wp_customize->remove_section( 'background_image' );
+	$wp_customize->remove_section( 'header_image' );
 }
 add_action( 'customize_register', 'personal_customize_register' );
 
