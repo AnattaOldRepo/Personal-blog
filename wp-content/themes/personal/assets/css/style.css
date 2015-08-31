@@ -460,13 +460,19 @@ table {
 
 @font-face {
   font-family: HelveticaNeue;
-  src: url("../fonts/helveticaneue.eot?") format("eot"), url("../fonts/helveticaneue.ttf") format("woff"), url("../fonts/helveticaneue.woff") format("woff"), url("../fonts/helveticaneue.ttf") format("truetype"); }
+  src: url("../fonts/helveticaneue.eot?") format("eot"), url("../fonts/helveticaneue.ttf") format("ttf"), url("../fonts/helveticaneue.woff") format("woff"), url("../fonts/helveticaneue.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
 @font-face {
   font-family: HelveticaNeue Bold;
-  src: url("../fonts/helveticaneuebold.eot?") format("eot"), url("../fonts/helveticaneuebold.ttf") format("woff"), url("../fonts/helveticaneuebold.woff") format("woff"), url("../fonts/helveticaneuebold.ttf") format("truetype"); }
+  src: url("../fonts/helveticaneuebold.eot?") format("eot"), url("../fonts/helveticaneuebold.ttf") format("ttf"), url("../fonts/helveticaneuebold.woff") format("woff"), url("../fonts/helveticaneuebold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
 @font-face {
   font-family: HelveticaNeue Light;
-  src: url("../fonts/helveticaneuelight.eot?") format("eot"), url("../fonts/helveticaneuelight.ttf") format("woff"), url("../fonts/helveticaneuelight.woff") format("woff"), url("../fonts/helveticaneuelight.ttf") format("truetype"); }
+  src: url("../fonts/helveticaneuelight.eot?") format("eot"), url("../fonts/helveticaneuelight.ttf") format("ttf"), url("../fonts/helveticaneuelight.woff") format("woff"), url("../fonts/helveticaneuelight.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
 body {
   font-family: "HelveticaNeue" sans-serif;
   font-size: 18px;
@@ -636,6 +642,10 @@ a {
 .no-border:after {
   display: none; }
 
+input {
+  -webkit-appearance: none;
+  border-radius: none; }
+
 .container {
   padding-right: 15px;
   padding-left: 15px;
@@ -688,11 +698,12 @@ a {
     @media only screen and (min-width: 640px) {
       .header__logo {
         float: left; } }
-  .header__navigation {
-    display: none; }
-    @media only screen and (min-width: 640px) {
-      .header__navigation {
-        display: block; } }
+  @media only screen and (max-width: 639px) {
+    .header__navigation {
+      float: none;
+      padding: 0; }
+      .header__navigation a {
+        margin: 0; } }
 
 .footer {
   position: relative;
