@@ -19,14 +19,21 @@
 					<p class="footer__module__dec"><?php echo $feedback_msg; ?></p>
 				<?php endif; ?>
 			</div>
-			<div class="footer__module">
-				<h2 class="footer__module__title">Newsletter</h2>
-				<p class="footer__module__dec">If you would like to receive something in your mail from me every week, leave your email address below</p>
-				<div class="form">
-					<input class="form__input" type="text" placeholder="Your e-mail address" />
-					<button class="form__button btn btn--secondary">Subscribe</button>
+
+			<?php if ( $mailchimp_form = get_theme_mod( 'mailchimp_form_html' ) ) : ?>
+				<div class="footer__module">
+					<h2 class="footer__module__title"><?php _e( 'Newsletter', 'personal' ); ?></h2>
+
+					<?php if ( $mailchimp_form_msg = get_theme_mod( 'mailchimp_form_msg') ) : ?>
+						<p class="footer__module__dec">
+							<?php echo $mailchimp_form_msg; ?>
+						</p>
+					<?php endif;?>
+					<div class="form">
+						<?php echo $mailchimp_form; ?>
+					</div>
 				</div>
-			</div>
+			<?php endif; ?>
 			<div class="footer__module">
 				<?php if ( $github_profile_link = get_theme_mod( 'github_profile_link' ) ) : ?>
 					<h2 class="footer__module__title"><?php _e( 'Follow', 'personal' ); ?></h2>

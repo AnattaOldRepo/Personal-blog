@@ -63,6 +63,58 @@ function personal_customize_register( $wp_customize ) {
 		)
 	);
 
+	// Newsletter form Setting Section.
+	$wp_customize->add_section(
+		'personal_newsletter_option' ,
+		array(
+			'title'         => __( 'Newsletter', 'personal' ),
+			'description'   => __( 'You can manage you theme newsletter setting in this section', 'personal' ),
+			'priority'      => 1,
+			'panel'         => 'personal_theme_options',
+		)
+	);
+
+	// mailchimp form message setting.
+	$wp_customize->add_setting(
+		'mailchimp_form_msg',
+		array(
+			'default'        => '',
+			'capability'     => 'edit_theme_options',
+		)
+	);
+
+	// Feedback message control.
+	$wp_customize->add_control(
+		'mailchimp_form_msg',
+		array(
+			'label'      => __( 'Mailchimp Form Message', 'personal' ),
+			'description'=> __( 'This text will appear on top of mailchimp form.', 'personal' ),
+			'section'    => 'personal_newsletter_option',
+			'settings'   => 'mailchimp_form_msg',
+			'type'       => 'textarea',
+		)
+	);
+
+	// mailchimp form setting.
+	$wp_customize->add_setting(
+		'mailchimp_form_html',
+		array(
+			'default'        => '',
+			'capability'     => 'edit_theme_options',
+		)
+	);
+
+	// Feedback message control.
+	$wp_customize->add_control(
+		'mailchimp_form_html',
+		array(
+			'label'      => __( 'Mailchimp Embedded Form', 'personal' ),
+			'section'    => 'personal_newsletter_option',
+			'settings'   => 'mailchimp_form_html',
+			'type'       => 'textarea',
+		)
+	);
+
 	// Social Media Setting Section.
 	$wp_customize->add_section(
 		'personal_social_media_option' ,
