@@ -68,7 +68,7 @@ function personal_customize_register( $wp_customize ) {
 		'personal_social_media_option' ,
 		array(
 			'title'         => __( 'Social', 'personal' ),
-			'description'   => __( 'You can manage you theme socila media setting in this section', 'personal' ),
+			'description'   => __( 'You can manage you theme social media setting in this section', 'personal' ),
 			'priority'      => 3,
 			'panel'         => 'personal_theme_options',
 		)
