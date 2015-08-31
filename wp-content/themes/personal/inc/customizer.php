@@ -137,7 +137,7 @@ function personal_customize_register( $wp_customize ) {
 		array(
 			'title'         => __( 'Copyright', 'personal' ),
 			'description'   => __( 'You can manage you theme copyright message setting in this section', 'personal' ),
-			'priority'      => 3,
+			'priority'      => 4,
 			'panel'         => 'personal_theme_options',
 		)
 	);
