@@ -14,8 +14,11 @@
 	<footer id="colophon" class="footer" role="contentinfo">
 		<div class="container">
 			<div class="footer__module">
-				<h2 class="footer__module__title">Feedback</h2>
-				<p class="footer__module__dec">If you have any comments on this article or would just like to chat, e-mail me at  <a href="mailto:<?php $user_info = get_userdata(1); echo $user_info->email; ?>"><?php $user_info = get_userdata(1); echo $user_info->user_email; ?></a></p>
+				<?php $feedback_options = get_theme_mod( 'personal_feedback_option' ); ?>
+				<?php if ( is_array( $feedback_options ) && array_key_exists( 'feedback_msg', $feedback_options ) && $feedback_options['feedback_msg'] ) : ?>
+					<h2 class="footer__module__title"><?php _e( 'Feedback', 'personal' ); ?></h2>
+					<p class="footer__module__dec"><?php echo $feedback_options['feedback_msg']; ?></p>
+				<?php endif; ?>
 			</div>
 			<div class="footer__module">
 				<h2 class="footer__module__title">Newsletter</h2>

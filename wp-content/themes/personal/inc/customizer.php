@@ -19,6 +19,49 @@ function personal_customize_register( $wp_customize ) {
 	$wp_customize->remove_section( 'colors' );
 	$wp_customize->remove_section( 'background_image' );
 	$wp_customize->remove_section( 'header_image' );
+
+	// Personal Theme Options.
+	$wp_customize->add_panel(
+		'personal_theme_options',
+		array(
+			'priority'       => 10,
+			'capability'     => 'edit_theme_options',
+			'theme_supports' => '',
+			'title'          => __( 'Personal Theme Options', 'personal' ),
+			'description'    => __( 'You can manage you theme related settings under this panel', 'personal' ),
+		)
+	);
+
+	// Feedback Setting Section.
+	$wp_customize->add_section(
+		'personal_feedback_option' ,
+		array(
+			'title'         => __( 'Feedback', 'personal' ),
+			'description'   => __( 'You can manage you theme feedback setting in this section', 'personal' ),
+			'priority'      => 1,
+			'panel'         => 'personal_theme_options',
+		)
+	);
+
+	// Feedback message setting.
+	$wp_customize->add_setting(
+		'personal_feedback_option[feedback_msg]',
+		array(
+			'default'        => '',
+			'capability'     => 'edit_theme_options',
+		)
+	);
+
+	// Feedback message control.
+	$wp_customize->add_control(
+		'feedback_msg',
+		array(
+			'label'      => __( 'Feedback Message', 'personal' ),
+			'section'    => 'personal_feedback_option',
+			'settings'   => 'personal_feedback_option[feedback_msg]',
+			'type'       => 'textarea',
+		)
+	);
 }
 add_action( 'customize_register', 'personal_customize_register' );
 
