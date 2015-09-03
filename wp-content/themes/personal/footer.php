@@ -24,7 +24,7 @@
 			<?php endif; ?>
 
 
-			<?php if ( $mailchimp_form = get_theme_mod( 'mailchimp_form_html' ) ) : ?>
+			<?php if ( $mailchimp_form_url = get_theme_mod( 'mailchimp_form_action_url' ) ) : ?>
 				<div class="footer__module">
 					<h2 class="footer__module__title"><?php _e( 'Newsletter', 'personal' ); ?></h2>
 
@@ -34,7 +34,10 @@
 						</p>
 					<?php endif;?>
 					<div class="form">
-						<?php echo $mailchimp_form; ?>
+						<form action="<?php echo esc_url( $mailchimp_form_url ); ?>" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+							<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+							<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+						</form>
 					</div>
 				</div>
 			<?php endif; ?>

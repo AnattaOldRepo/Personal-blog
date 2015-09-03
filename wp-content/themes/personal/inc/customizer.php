@@ -97,7 +97,7 @@ function personal_customize_register( $wp_customize ) {
 
 	// mailchimp form setting.
 	$wp_customize->add_setting(
-		'mailchimp_form_html',
+		'mailchimp_form_action_url',
 		array(
 			'default'        => '',
 			'capability'     => 'edit_theme_options',
@@ -106,11 +106,11 @@ function personal_customize_register( $wp_customize ) {
 
 	// Feedback message control.
 	$wp_customize->add_control(
-		'mailchimp_form_html',
+		'mailchimp_form_action_url',
 		array(
-			'label'      => __( 'Mailchimp Embedded Form', 'personal' ),
+			'label'      => __( 'Mailchimp Form Action URL', 'personal' ),
 			'section'    => 'personal_newsletter_option',
-			'settings'   => 'mailchimp_form_html',
+			'settings'   => 'mailchimp_form_action_url',
 			'type'       => 'textarea',
 		)
 	);
