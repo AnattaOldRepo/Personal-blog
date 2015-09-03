@@ -35,8 +35,8 @@
 					<?php endif;?>
 					<div class="form">
 						<form action="<?php echo esc_url( $mailchimp_form_url ); ?>" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-							<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-							<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+							<input type="email" placeholder="Email" value="" name="EMAIL" class="form__input" id="mce-EMAIL">
+							<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="form__button btn btn--secondary">
 						</form>
 					</div>
 				</div>
